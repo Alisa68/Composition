@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import ru.netology.domain.DataMovie;
 
 @Data
-@NoArgsConstructor
+
 
 public class ManagerMovie {
     DataMovie[] items = {new DataMovie(1, "Soul", "cartoon", false),
@@ -16,11 +16,16 @@ public class ManagerMovie {
             new DataMovie(4, "Invisible", "Thriller", false),
             new DataMovie(5, "Troll's tour", "cartoon", true),
             new DataMovie(6, "I BelieveInLove", "romance", true),
-            new DataMovie(7, "Pinocchio", "children", true)};
+            new DataMovie(7, "Pinocchio", "children", true),
+            new DataMovie(8, "House of Cards", "serials", true),
+            new DataMovie(9, "The man is unknown", "horror", true),
+            new DataMovie(10, "Method", "action", true)};
 
-    DataMovie film = new DataMovie(8, "House of Cards", "serials", true);
 
-    private int moviesQuantity = 5;
+    public ManagerMovie() {
+    }
+
+    private int moviesQuantity = 10;
 
 
     //Метод для добавления фильмов
@@ -32,12 +37,13 @@ public class ManagerMovie {
         //}
         System.arraycopy(items, 0, tmp, 0, items.length);
         int lastIndex = tmp.length - 1;
-        tmp[lastIndex] = this.film;
+        tmp[lastIndex] = film;
         items = tmp;
 
 
         return items;
     }
+
 
     //Метод получения всего списка элементов
     public DataMovie[] getAllMovies() {
