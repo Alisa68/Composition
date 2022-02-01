@@ -10,22 +10,11 @@ import ru.netology.domain.DataMovie;
 
 
 public class ManagerMovie {
-    DataMovie[] items = {new DataMovie(1, "Soul", "cartoon", false),
-            new DataMovie(2, "Call me", "action", false),
-            new DataMovie(3, "Gentlemen", "action", false),
-            new DataMovie(4, "Invisible", "Thriller", false),
-            new DataMovie(5, "Troll's tour", "cartoon", true),
-            new DataMovie(6, "I BelieveInLove", "romance", true),
-            new DataMovie(7, "Pinocchio", "children", true),
-            new DataMovie(8, "House of Cards", "serials", true),
-            new DataMovie(9, "The man is unknown", "horror", true),
-            new DataMovie(10, "Method", "action", true)};
-
+    private DataMovie[] items = new DataMovie[0];
+    private int moviesQuantity = 10;
 
     public ManagerMovie() {
     }
-
-    private int moviesQuantity = 10;
 
 
     //Метод для добавления фильмов
