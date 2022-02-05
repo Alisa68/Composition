@@ -2,7 +2,7 @@ package ru.netology.manager;
 
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
+
 
 import ru.netology.domain.DataMovie;
 
@@ -16,6 +16,9 @@ public class ManagerMovie {
     public ManagerMovie() {
     }
 
+    public ManagerMovie(int moviesQuantity) {
+        this.moviesQuantity = moviesQuantity;
+    }
 
     //Метод для добавления фильмов
     public DataMovie[] addMovie(DataMovie film) {
@@ -58,4 +61,6 @@ public class ManagerMovie {
         }
         return answer;
     }
+
+
 }

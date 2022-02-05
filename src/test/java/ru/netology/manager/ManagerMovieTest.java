@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import ru.netology.domain.DataMovie;
 
 import static org.junit.jupiter.api.Assertions.*;
+@Data
 
 class ManagerMovieTest {
     ManagerMovie manager = new ManagerMovie();
@@ -48,6 +49,21 @@ class ManagerMovieTest {
     }
 
     @Test
+    void shouldUseManagerMovie() {
+        ManagerMovie manager = new ManagerMovie();
+        assertEquals(10, manager.getMoviesQuantity());
+
+    }
+
+    @Test
+    void shouldUseManagerMovieTwenty() {
+        ManagerMovie manager = new ManagerMovie(20);
+        assertEquals(20, manager.getMoviesQuantity());
+
+    }
+
+
+    @Test
     void shouldGetAllMovies() {
         DataMovie[] actual = manager.getAllMovies();
         DataMovie[] expected = {tenth, ninth, eighth, seventh, sixth, fifth, fourth, third, second, first};
@@ -56,7 +72,7 @@ class ManagerMovieTest {
     }
 
     @Test
-    void shouldGetTenMovies() {
+    void shouldGetMovies() {
         DataMovie[] actual = manager.getTheRightAmountMovies();
         DataMovie[] expected = {tenth, ninth, eighth, seventh, sixth, fifth, fourth, third, second, first};
         assertArrayEquals(expected, actual);
